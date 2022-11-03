@@ -1,0 +1,169 @@
+\def\mytitle{CIRCLE ASSIGNMENT}
+\def\myauthor{Somisetty Kedareswari}
+\def\contact{mail2kedari@gmail.com}
+\def\mymodule{Future Wireless Communication (FWC)}
+\documentclass[10pt, a4paper]{article}
+\usepackage[a4paper,outer=1.5cm,inner=1.5cm,top=1.75cm,bottom=1.5cm]{geometry}
+\twocolumn
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage[colorlinks,linkcolor={black},citecolor={blue!80!black},urlcolor={blue!80!black}]{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage{lmodern}
+\usepackage{tikz}
+	\usepackage{physics}
+%\documentclass[tikz, border=2mm]{standalone}
+%\usepackage{karnaugh-map}
+%\documentclass{article}
+\usepackage{tabularx}
+%\usepackage{circuitikz}
+\usepackage{enumitem}
+\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{watermark}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{titlesec}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\titlespacing{\subsection}{1pt}{\parskip}{3pt}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\paragraph}{0pt}{\parskip}{\parskip}
+\newcommand{\figuremacro}[5]{
+    \begin{figure}[#1]
+        \centering
+        \includegraphics[width=#5\columnwidth]{#2}
+        \caption[#3]{\textbf{#3}#4}
+        \label{fig:#2}
+    \end{figure}
+}
+
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\let\vec\mathbf
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\title{\mytitle}
+\author{\myauthor\hspace{1em}\\\contact\\FWC22062\hspace{6.5em}IITH\hspace{0.5em}\mymodule\hspace{6em}Assignment}
+\begin{document}
+	\maketitle
+	\tableofcontents
+   \section{Problem}
+  Let C be the circle with centre $\myvec{0 \\0}$ and radius 3 units. Find the equation of the locus of the mid-points of the chords which subtend an angle of $\frac{2\pi}{3}$ at its center.
+\section{Construction}
+  \includegraphics[scale=0.4]{circle.png}
+  	\begin{center}
+  Figure of construction
+  	\end{center}
+  \section{Solution}
+
+Circle equation : $x^2+y^2=9$\\
+The standard equation of the conics is given as :
+\begin{align}
+\vec{x}^{\top}\vec{V}\vec{x}+2\vec{u}^{\top}\vec{x}+f=0
+\end{align}
+The given circle  can be expressed as conics with \\parameters
+\begin{align}
+	\vec{V} &= \vec{I}, \vec{u} = -\myvec{0 \\0}, f = -9
+	\end{align}
+
+	Radius and Centre are
+	\begin{align}
+	r &=\sqrt{{\vec{u}^{\top}\vec{u}}-f },\vec{O}=-u
+    \end{align}
+\begin{equation}
+  r=3
+\end{equation}
+Angle between A and B is cos$\theta$ = $\frac{\vec{(A)}^{\top}\vec{B}}{||A|| ||B||}$ \\
+\centering cos$120^{\circ}$ = $\frac{\vec{(A)}^{\top}\vec{B}}{9}$
+\begin{align}
+    \vec{(A)}^{\top}\vec{B}=\frac{-9}{2}
+\end{align}\\
+Let $\vec{R}$ is the rotation matrix of given circle  \\\vspace{1mm}
+\begin{align}
+ \vec{R} = \myvec{0 & 1 \\-1 & 0}
+\end{align}
+
+Let $\vec{B}$ be the another end point of chord \\\vspace{1mm}
+\begin{align}
+    \vec{B} =\vec{R}\vec{A}
+\end{align}
+Let $\vec{M}$ be th mid point of chord of the circle
+\begin{align}
+    \vec{M} = \frac{\vec{A}+\vec{B}}{2}
+\end{align}
+\begin{align}
+     \vec{M} = \frac{\vec{A}+\vec{R}\vec{A}}{2}
+\end{align}
+\begin{align}
+     \vec{M} = \frac{\vec{A(I+R)}}{2}
+\end{align}
+\begin{align}
+     \vec{A} =\vec{2[I+R]^{-1}M}
+\end{align}
+
+STEPS TO FIND THE LOCUS OF THE MIDPOINT OF CHORD OF THE CIRCLE:\\
+By substituting A value in quadratic form of the circle we get
+\begin{align}
+(\vec{2(I+R)}^{-1}\vec{M})^{\top}(\vec{2(I+R)}^{-1}\vec{M})+2(\vec{2(I+R)}^{-1}\vec{M})\myvec{0 & 0}+f=0
+\end{align}
+
+\begin{align}
+(\vec{2(I+R)}^{-1}\vec{M})^{\top}(\vec{2(I+R)}^{-1}\vec{M})+f=0
+\end{align}
+
+\begin{align}
+    \norm{\vec{(\vec{2(I+R)}^{-1}\vec{M})}}^2+f = 0
+\end{align}
+\begin{align}
+(\vec{2(I+R)}^{-1}\vec{M})^{\top}(\vec{2(I+R)}^{-1}\vec{M})+f=0
+\end{align}
+\begin{align}
+(\vec{2(I+R)}^{-1})^{\top}(\vec{M})^{\top}\vec{2(I+R)}^{-1}\vec{M}+f=0
+\end{align}
+\begin{align}
+(\vec{M})^{\top}(\vec{2(I+R)}^{-1})^{\top}\vec{2(I+R)}^{-1}\vec{M}+f=0
+\end{align}
+Let
+\begin{align}
+\vec{V}=(\vec{2(I+R)}^{-1})^{\top}\vec{2(I+R)}^{-1}
+\end{align}
+Where
+\begin{align}
+\vec{2(I+R)}^{-1}=\myvec{1 & 1.72 \\-1.72 & 1}
+\end{align}
+\begin{align}
+(\vec{2(I+R)}^{-1})^{\top}=\myvec{1 & -1.72 \\1.72 & 1}
+\end{align}
+By solving this we get
+\begin{equation}
+\vec{V}=I
+\end{equation}
+FINALLY THE LOCUS OF MIDPOINT OF CHORD OF THE GIVEN CIRCLE IS:
+\begin{align}
+\vec{M}^{\top}\vec{V}\vec{M}+f=0
+\end{align}
+where 
+\begin{align}
+	\vec{V} &= \vec{I}, f = -9
+	\end{align}
+Radius 
+	\begin{align}
+	r &=\sqrt{-f }=\sqrt{3}
+    \end{align}
+
+\textbf{termux commands :}
+\begin{lstlisting}
+bash sh2.sh............using shell command
+\end{lstlisting}
+\begin{center}
+Below python code realizes the above construction :
+\fbox{\parbox{8.5cm}{\url{https://github.com/kedareswari200/
+fwc-module1/blob/Matrix1/cir.py}}}
+\end{center}
+\end{document}
