@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Problem statement}{1}{}%
+\contentsline {section}{\numberline {2}Considerations}{1}{}%
+\contentsline {section}{\numberline {3}Plotting the Circle with center and radius}{1}{}%
+\contentsline {section}{\numberline {4}Solution}{1}{}%
+\contentsline {subsection}{\numberline {4.1}Calculation of center of the Circle}{1}{}%
+\contentsline {subsection}{\numberline {4.2}Calculation of radius of the Circle}{1}{}%
+\contentsline {subsection}{\numberline {4.3}Deriving equation for Circle in matrix form}{2}{}%
+\contentsline {section}{\numberline {5}Conclusion}{2}{}%
