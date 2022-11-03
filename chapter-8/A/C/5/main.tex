@@ -1,0 +1,308 @@
+
+\def\mytitle{CIRCLE ASSIGNMENT}
+\def\myauthor{Cheenepalli Chandana}
+\def\contact{cheenepallichandana531@gmail.com}
+\def\mymodule{Future Wireless Communication (FWC)}
+\documentclass[10pt, a4paper]{article}
+\usepackage[a4paper,outer=1.5cm,inner=1.5cm,top=1.75cm,bottom=1.5cm]{geometry}
+\twocolumn
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage[colorlinks,linkcolor={black},citecolor={blue!80!black},urlcolor={blue!80!black}]{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage{lmodern}
+\usepackage{tikz}
+	\usepackage{physics}
+%\documentclass[tikz, border=2mm]{standalone}
+%\usepackage{karnaugh-map}
+%\documentclass{article}
+\usepackage{tabularx}
+%\usepackage{circuitikz}
+\usepackage{enumitem}
+\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{watermark}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{titlesec}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\titlespacing{\subsection}{1pt}{\parskip}{3pt}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\paragraph}{0pt}{\parskip}{\parskip}
+\newcommand{\figuremacro}[5]{
+    \begin{figure}[#1]
+        \centering
+        \includegraphics[width=#5\columnwidth]{#2}
+        \caption[#3]{\textbf{#3}#4}
+        \label{fig:#2}
+    \end{figure}
+}
+
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\let\vec\mathbf
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\thiswatermark{\centering \put(181,-119.0){\includegraphics[scale=0.13]{iith_logo3}} }
+\title{\mytitle}
+\author{\myauthor\hspace{1em}\\\contact\\FWC22062\hspace{6.5em}IITH\hspace{0.5em}\mymodule\hspace{6em}Assignment}
+\begin{document}
+	\maketitle
+	\tableofcontents
+   \section{Problem}
+  Find the locus of midpoint of the chord of the circle $x^2+y^2=4$ whcih subtends a right angle at the origin.
+\section{Construction}
+  \includegraphics[scale=0.4]{circle.png}
+  	\begin{center}
+  Figure of construction
+  	\end{center}
+  \section{Solution}
+
+Circle equation : $x^2+y^2=4$\\
+The standard equation of the conics is given as :
+\begin{align}
+\vec{x}^{\top}\vec{V}\vec{x}+2\vec{u}^{\top}\vec{x}+f=0
+\end{align}
+The given circle  can be expressed as conics with \\parameters
+\begin{align}
+	\vec{V} &= \vec{I}, \vec{u} = -\myvec{0 \\0}, f = -4
+	\end{align}
+
+	Radius and Centre are
+	\begin{align}
+	r &=\sqrt{{\vec{u}^{\top}\vec{u}}-f },\vec{O}=-u
+    \end{align}
+\begin{equation}
+  r=2 
+\end{equation}
+From the figure
+\begin{align}
+    \vec{(A)}^{\top}\vec{B}=0
+\end{align}
+Let $\vec{R}$ is the rotation matrix of given circle  \\\vspace{1mm}
+\begin{align}
+ \vec{R} = \myvec{0 & 1 \\-1 & 0}
+\end{align}
+
+Let $\vec{B}$ be the another end point of chord \\\vspace{1mm}
+\begin{align}
+    \vec{B} =\vec{R}\vec{A}
+\end{align}
+Let $\vec{P}$ be th mid point of chord of the circle
+\begin{align}
+    \vec{P} = \frac{\vec{A}+\vec{B}}{2}
+\end{align}
+\begin{align}
+     \vec{P} = \frac{\vec{A}+\vec{R}\vec{A}}{2}
+\end{align}
+\begin{align}
+     \vec{P} = \frac{\vec{A(I+R)}}{2}
+\end{align}
+\begin{align}
+     \vec{A} =\vec{2[I+R]^{-1}P}
+\end{align}
+
+STEPS TO FIND THE LOCUS OF THE MIDPOINT OF CHORD OF THE CIRCLE:\\
+By substituting A value in quadratic form of the circle we get
+\begin{align}
+(\vec{2(I+R)}^{-1}\vec{P})^{\top}(\vec{2(I+R)}^{-1}\vec{P})+2(\vec{2(I+R)}^{-1}\vec{P})\myvec{0 & 0}+f=0
+\end{align}
+
+\begin{align}
+(\vec{2(I+R)}^{-1}\vec{P})^{\top}(\vec{2(I+R)}^{-1}\vec{P})+f=0
+\end{align}
+
+\begin{align}
+    \norm{\vec{(\vec{2(I+R)}^{-1}\vec{P})}}^2+f = 0
+\end{align}
+\begin{align}
+(\vec{2(I+R)}^{-1}\vec{P})^{\top}(\vec{2(I+R)}^{-1}\vec{P})+f=0
+\end{align}
+\begin{align}
+(\vec{2(I+R)}^{-1})^{\top}(\vec{P})^{\top}\vec{2(I+R)}^{-1}\vec{P}+f=0
+\end{align}
+\begin{align}
+(\vec{P})^{\top}(\vec{2(I+R)}^{-1})^{\top}\vec{2(I+R)}^{-1}\vec{P}+f=0
+\end{align}
+Let
+\begin{align}
+\vec{V}=(\vec{2(I+R)}^{-1})^{\top}\vec{2(I+R)}^{-1}
+\end{align}
+Where
+\begin{align}
+\vec{2(I+R)}^{-1}=\myvec{1 & -1 \\1 & 1}
+\end{align}
+\begin{align}
+(\vec{2(I+R)}^{-1})^{\top}=\myvec{1 & 1 \\-1 & 1}
+\end{align}
+By solving this we get
+\begin{equation}
+\vec{V}=I
+\end{equation}
+FINALLY THE LOCUS OF MIDPOINT OF CHORD OF THE GIVEN CIRCLE IS:
+\begin{align}
+\vec{P}^{\top}\vec{V}\vec{P}+f=0
+\end{align}
+where 
+\begin{align}
+	\vec{V} &= \vec{I}, f = -2
+	\end{align}
+Radius 
+	\begin{align}
+	r &=\sqrt{-f }=\sqrt{2}
+    \end{align}
+
+\textbf{termux commands :}
+\begin{lstlisting}
+bash sh2.sh............using shell command
+\end{lstlisting}
+\begin{center}
+Below python code realizes the above construction :
+\fbox{\parbox{8.5cm}{\url{https://github.com/chandana531/cchandana_fwc/circle_assignment/codes/circle_assignment.py}}}
+\end{center}
+\end{document}
+=======
+\def\mytitle{MATRIX ANALYSIS USING PYTHON}
+\def\myauthor{C.CHANDANA}
+\def\contact{velicharlagokulkumar@gmail.com}
+\def\mymodule{Future Wireless Communication (FWC)}
+\documentclass[10pt, a4paper]{article}
+\usepackage[a4paper,outer=1.5cm,inner=1.5cm,top=1.75cm,bottom=1.5cm]{geometry}
+\twocolumn
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage[colorlinks,linkcolor={black},citecolor={blue!80!black},urlcolor={blue!80!black}]{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage{lmodern}
+\usepackage{tikz}
+	\usepackage{physics}
+%\documentclass[tikz, border=2mm]{standalone}
+%\usepackage{karnaugh-map}
+%\documentclass{article}
+\usepackage{tabularx}
+%\usepackage{circuitikz}
+\usepackage{enumitem}
+\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{watermark}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{titlesec}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\titlespacing{\subsection}{1pt}{\parskip}{3pt}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\paragraph}{0pt}{\parskip}{\parskip}
+\newcommand{\figuremacro}[5]{
+    \begin{figure}[#1]
+        \centering
+        \includegraphics[width=#5\columnwidth]{#2}
+        \caption[#3]{\textbf{#3}#4}
+        \label{fig:#2}
+    \end{figure}
+}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\let\vec\mathbf
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\thiswatermark{\centering \put(181,-119.0){\includegraphics[scale=0.13]{iith_logo3}} }
+\title{\mytitle}
+\author{\myauthor\hspace{1em}\\\contact\\FWC22034\hspace{6.5em}IITH\hspace{0.5em}\mymodule\hspace{6em}Assignment}
+\begin{document}
+	\maketitle
+	\tableofcontents
+   \section{Problem}
+  Let A be the centre of the circle $x^2 + y^2-2x-4y-20=0$. Suppose the tangents at the points  B(1,7) and D(4.-2) on the circle meet at the point C. Find the area of the quadrilateral ABCD.
+\section{Construction}
+  \includegraphics[scale=0.47]{matrix.pdf}
+  	\begin{center}
+  Figure of construction
+  	\end{center}
+  \section{Solution}
+Circle equation : $x^2+y^2-2x-4y-20=0$\\
+The standard equation of the conics is given as :
+\begin{align}
+\vec{x}^{\top}\vec{V}\vec{x}+2\vec{u}^{\top}\vec{x}+f=0
+\end{align}
+The given circle  can be expressed as conics with \\parameters
+\begin{align}
+	\vec{V} &= \vec{I}, \vec{u} = -\myvec{1 \\2}, f = -20
+	\end{align}
+	Radius and Centre are
+	\begin{align}
+	r &=\sqrt{{\vec{u}^{\top}\vec{u}}-f },\vec{A}=-u
+    \end{align}
+    The steps for constructing above figure are :
+\begin{enumerate}
+ \item Generate a circle of radius $r$ with centre $\vec{A}$ 
+ \item Locate $\vec{B}$,$\vec{D}$ on the circle
+ \item Find the Normal vectors to $\vec{A}$$\vec{B}$,$\vec{A}$$\vec{D}$ say $\vec{m}_1$,$\vec{m}_2$
+\item Find the equations of the tangents and use them to find the intersection $\vec{C}$
+\end{enumerate}
+    The input parameters for this construction are
+\begin{center}
+\begin{tabular}{|c|c|c|}
+	\hline
+	\textbf{Symbol}&\textbf{Value}&\textbf{Description}\\
+	\hline
+	$\vec{A}$ &\myvec{1\\2}& Centre\\
+	\hline
+    $\vec{B}$ &\myvec{1\\7}&Point B\\
+	\hline
+ $\vec{D}$&\myvec{4\\-2}&Point D\\
+	\hline
+\end{tabular}
+\end{center}
+$\vec{C}$ is obtained as the point of intersection of the tangents at $\vec{B}$ and $\vec{D}$ 
+The equation of both tangents are respectively 
+\begin{align}
+	\begin{split}
+	\vec{x} &= \vec{B} + \lambda_1 \vec{m}_1
+\\
+		\vec{x} &= \vec{D} + \lambda_2 \vec{m}_2
+		\label{eq:quad-circ-lam-B}
+	\end{split}
+\end{align}
+and their intersection is given by 
+\begin{align}
+	 \vec{B} + \lambda_1 \vec{m}_1
+	&	= \vec{D} + \lambda_2 \vec{m}_2
+	\\
+	\implies \myvec{\vec{m}_1 & \vec{m}_2}\myvec{\lambda_1 \\ -\lambda_2 } &= \vec{D}-\vec{B}
+\end{align}
+which can be used to obtained $\lambda_1, \lambda_2$ and consequently $\vec{C}$, using 
+		\eqref{eq:quad-circ-lam-B}
+		\begin{center}
+		$\therefore$ Coordinates of C is  $\vec{C} = \myvec{16 \\ 7}$\\
+		\end{center}
+Letting,
+\begin{align}
+\vec{v1}=\vec{A}-\vec{B}\\
+\vec{v2}=\vec{A}-\vec{C}
+\end{align}		
+	Area of the $\Delta$ABC is given by 
+	\begin{align}
+&=\frac{1}{2}\norm{\vec{v1}\times\vec{v2}}
+\end{align}
+	Area of the of quadrilateral ABCD is given by 
+	\begin{align}
+&=2\times\frac{1}{2}\norm{\vec{v1}\times\vec{v2}}
+\end{align}
+$\therefore$The area of quadrilateral ABCD=75 sq.units\\
+\textbf{termux commands :}
+\begin{lstlisting}
+bash sh2.sh............using shell command
+\end{lstlisting}
+\end{document}
